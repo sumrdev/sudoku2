@@ -7,6 +7,9 @@ for (let i = 1; i < 11; i++) {
 	button.classList.add("button");
 	button.id = buttonConstruction[i-1];
 	button.innerHTML = buttonConstruction[i-1];
+	if(buttonConstruction[i-1] != "delete"){
+		button.classList.add("number-button");
+	}
 	inputButtons.append(button);    
 	button.onclick = function() {
 		let activeBefore = false 

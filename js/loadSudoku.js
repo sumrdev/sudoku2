@@ -8,7 +8,11 @@ newGame.onclick = function() {
 function loadSudoku(){
     let sudoku = generateNewSudoku("medium");
     for (let i = 0; i < tiles.length; i++) {
-        tiles[i].textContent = sudoku[i];
+        tiles[i].style.fontSize = "0vh";
+        setTimeout(() => {
+            tiles[i].style.fontSize = "2.8vh";
+            tiles[i].textContent = sudoku[i];
+        }, 150);
     }
 }
 

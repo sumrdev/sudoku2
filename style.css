@@ -49,8 +49,8 @@ button :hover{
 }
 
 .tile {
-    min-width: 4vh;
-    min-height: 4vh;
+    min-width: 4.8vh;
+    min-height: 4.8vh;
     max-height: 5vh;
     max-width: 5vh;
 
@@ -71,7 +71,7 @@ button :hover{
 
     outline: none;
 
-    font-size: 2.5vh;
+    font-size: 3vh;
 }
 
 .vertical-left {
@@ -128,16 +128,20 @@ button :hover{
 
     margin: 0.3vh;
 
-    min-width: 6vh;
-    min-height: 6vh;
-    max-height: 6vh;
-    max-width: 6vh;
+    min-width: 7vh;
+    min-height: 7vh;
+    max-height: 7vh;
+    max-width: 7vh;
 
     cursor: pointer;
 }
 
+.number-button {
+    font-size: 3vh;
+}
+
 .active {
-    background-color: crimson;
+    background-color: crimson !important;
 }
 
 .ui-active {
