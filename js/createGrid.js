@@ -1,4 +1,8 @@
 const grid = document.getElementById("grid");
+const disallowedKeys = ["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"];
+let sudoku
+
+let difficulty = "easy";
 
 for (let i = 0; i < 81; i++) {
     let tile = document.createElement("div");
@@ -14,9 +18,21 @@ for (let i = 0; i < 81; i++) {
     }
     tile.addEventListener("keydown", (e) => {
         handleKeyboard(e, tile, grid)
+        if(!disallowedKeys.includes(e.key)){
+            checkError(tile.id)
+        }
+        if(checkIfSolved()){
+            handleWinScreen();
+        }
     })
     tile.onmouseover = function() {
         advancedHover(tile.id)
+    }
+    tile.onfocus = function() {
+        advancedHover(tile.id)
+    }
+    tile.onblur = function() {
+        removeHoverEffect()
     }
     tile.onmouseleave = function() {
         removeHoverEffect()
@@ -54,5 +70,25 @@ function handleKeyboard(e,tile,grid){
             break; 
         default:
             break;
+    }
+}
+
+function handleWinScreen(){
+    const page = document.getElementById("page");
+    const winScreen = document.getElementById("win-screen");
+    const solvedTime = document.getElementById("solved-time");
+    const solvedDifficulty = document.getElementById("solved-difficulty");
+
+    page.style.display = "none"
+    winScreen.style.display = "flex"
+    solvedTime.textContent = timer.textContent;
+    solvedDifficulty.textContent = difficulty.toUpperCase();
+
+    const backButton = document.getElementById("back-button");
+    backButton.onclick = function() {
+        loadSudoku();
+        resetTimer();
+        page.style.display = "block"
+        winScreen.style.display = "none"
     }
 }

@@ -21,11 +21,20 @@ button :hover{
 
 #page{
     position: absolute;
-    top: 20vh;
+    top: 10vh;
     left: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
+}
+
+#win-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40vh;
+    display: none;
 }
 
 #info {
@@ -39,6 +48,18 @@ button :hover{
     align-items: center;
     margin: none;
 
+}
+
+#game-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: none;
+}
+
+.info {
+    margin-left: 3vh;
+    margin-right: 3vh;
 }
 
 #grid {
@@ -55,7 +76,7 @@ button :hover{
     max-width: 5vh;
 
 
-    margin: 0.1vh;
+    margin: 0.2vh;
 
     border-radius: 20%;
     
@@ -90,6 +111,10 @@ button :hover{
     border-bottom: 0.5vh solid #111111;
 }
 
+.error {
+    background-color: crimson !important;
+}
+
 #grid div:hover {
     background-color: #3b3b70;
 }
@@ -120,7 +145,7 @@ button :hover{
 
 .button {
     border: none;
-    border-radius: 100%;
+    border-radius: 30%;
     
     background-color: #22222a;
     color: #eef;
@@ -160,6 +185,18 @@ button :hover{
 
     min-width: 10vh;
     min-height: 5vh; 
+}
+
+#stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: none;
+    background-color: #050505;
+    padding: 3vh;
+    border-radius: 4vh;
+    box-shadow: 0.4vh 0.4vh 0.6vh #050505;
 }
 
 #settings {

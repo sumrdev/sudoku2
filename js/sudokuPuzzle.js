@@ -125,6 +125,9 @@ function generateDifficulty(grid, difficulty) {
 	if (difficulty == "super-hard") {
 		holePercentage = 81 - 25;
 	}
+	if( difficulty == "solved"){
+		holePercentage = 0;
+	}
 
 	return deleteRandomNumbers(grid, holePercentage);
 

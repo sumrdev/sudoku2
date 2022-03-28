@@ -13,18 +13,19 @@
     <script defer src="./js/loadSudoku.js"></script>
     <script defer src="./js/loadBorders.js"></script>
     <script defer src="./js/advancedHover.js"></script>
-
+    <script defer src="./js/timer.js"></script>
+    <script defer src="./js/submit.js"></script>
 </head>
 <body>
     <div id="page">
         <div id="info"> 
-            <div id="game-info">
-                <div id="time"></div>
-                <div id="difficulty"></div>
-            </div>
+
 
         </div>
         <div id="game">
+            <div id="game-info">
+                <div class ="info" id="time">0</div>
+            </div>
             <div id="grid">
 
             </div>
@@ -40,6 +41,14 @@
         </div>
         <div id="settings">
             
+        </div>
+    </div>
+    <div id="win-screen">
+        <div id="stats">
+            <div class="big" id="congrats">You solved the Sudoku!</div>
+            <div class="info" id="solved-time">0</div>
+            <div class="info" id="solved-difficulty">Medium</div>
+            <button class ="button ui"id="back-button">Solve another!</button>  
         </div>
     </div>
 </body>

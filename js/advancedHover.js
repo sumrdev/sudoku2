@@ -42,3 +42,17 @@ function removeHoverEffect(){
         tiles[i].classList.remove("hover-effect-same");
     }
 }
+
+function checkError(n) {
+    masterList = createRuleGrids();
+    if(
+        hasDuplicates(removeEmptyStr(masterList.horizontalGrid[Math.floor(n / 9)])) ||
+        hasDuplicates(removeEmptyStr(masterList.verticalGrid[n % 9])) ||
+        checkX3(n)
+    ){
+        tiles[n].classList.add("error");
+    } else {
+        tiles[n].classList.remove("error");
+    }
+
+}
